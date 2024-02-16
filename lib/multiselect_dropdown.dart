@@ -37,6 +37,7 @@ class MultiSelectDropDown<T> extends StatefulWidget {
   final List<ValueItem<T>> selectedOptions;
   final List<ValueItem<T>> disabledOptions;
   final OnOptionSelected<T>? onOptionSelected;
+  final void Function(bool)? onTap;
 
   /// [onOptionRemoved] is the callback that is called when an option is removed.The callback takes two arguments, the index of the removed option and the removed option.
   /// This will be called only when the delete icon is clicked on the option chip.
@@ -649,6 +650,7 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
       _searchFocusNode!.unfocus();
     }
     _focusNode.unfocus();
+    widget.onTap?.call(false);
   }
 
   /// Buid the selected item chip.
@@ -672,6 +674,7 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
       _focusNode.unfocus();
     } else {
       _focusNode.requestFocus();
+       widget.onTap?.call(true);
     }
   }
 
