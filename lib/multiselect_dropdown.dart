@@ -269,6 +269,7 @@ class MultiSelectDropDown<T> extends StatefulWidget {
       this.animateSuffixIcon = true,
       this.singleSelectItemStyle,
       this.optionBuilder,
+      this.onTap,
       this.searchLabel = 'Search'})
       : networkConfig = null,
         responseParser = null,
@@ -328,6 +329,7 @@ class MultiSelectDropDown<T> extends StatefulWidget {
       this.animateSuffixIcon = true,
       this.singleSelectItemStyle,
       this.optionBuilder,
+      this.onTap,
       this.searchLabel = 'Search'})
       : options = const [],
         super(key: key);
